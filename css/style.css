@@ -1,0 +1,245 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("../assets/fonts/Urbanist-VariableFont_wght.ttf");
+}
+.show {
+  display: block !important;
+}
+
+body {
+  background-color: rgba(255, 94, 76, 0.7725490196);
+  height: 100vh;
+  font-family: "Urbanist";
+}
+
+.header {
+  max-height: 100px;
+  min-height: 60px;
+  height: 10vh;
+}
+.header__nav {
+  max-width: 1400px;
+  width: 80vw;
+  margin: 0 auto;
+}
+.header__nav__list {
+  max-width: 800px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
+.header__nav__list__li {
+  max-height: 100px;
+  min-height: 60px;
+  height: 10vh;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.header__nav__list__li__link {
+  max-height: 100px;
+  min-height: 60px;
+  height: 10vh;
+  text-decoration: none;
+  text-transform: capitalize;
+  text-align: center;
+  color: #000000;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+}
+.header__nav__list__li__link:hover {
+  color: #e4e4e4;
+}
+
+.main {
+  max-width: 1600px;
+  width: 80vw;
+  margin: 0 auto;
+}
+.main__release-content {
+  max-height: 100px;
+  min-height: 60px;
+  height: 10vh;
+  line-height: 10vh;
+}
+.main__release-content__release {
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+.main__release-content__release__alert {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.main__release-content__release__alert:hover {
+  color: #e4e4e4;
+}
+.main__primary-content {
+  display: flex;
+  justify-content: space-between;
+  height: 60vh;
+}
+.main__primary-content__corporate-container {
+  width: 15%;
+}
+.main__primary-content__corporate-container__logo-container {
+  margin-top: 25%;
+}
+.main__primary-content__corporate-container__logo-container__logo {
+  width: 100%;
+}
+.main__primary-content__corporate-container__title-slogan-container__title {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 8px;
+  margin-top: 50px;
+}
+.main__primary-content__corporate-container__title-slogan-container__slogan {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.main__primary-content__slider-container {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5vw;
+}
+.main__primary-content__slider-container__arrow-container {
+  width: 5%;
+  margin-top: 25vh;
+}
+.main__primary-content__slider-container__arrow-container__left-arrow {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+.main__primary-content__slider-container__arrow-container__right-arrow {
+  cursor: pointer;
+}
+.main__primary-content__slider-container__side {
+  width: 25%;
+  margin-top: 25vh;
+}
+.main__primary-content__slider-container__side__img {
+  height: 50%;
+  display: block;
+  margin: 5vh auto;
+}
+.main__primary-content__slider-container__side__product-title {
+  text-align: center;
+  font-size: 20px;
+}
+.main__primary-content__slider-container__side__product-price {
+  text-align: center;
+  font-size: 20px;
+}
+.main__primary-content__slider-container__middle {
+  width: 37%;
+  margin-top: 5vh;
+}
+.main__primary-content__slider-container__middle__img {
+  height: 90%;
+  display: block;
+  margin: 5vh auto;
+}
+.main__modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 34, 68, 0.7529411765);
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+.main__modal__form {
+  position: absolute;
+  top: 40vh;
+  left: 25vw;
+  height: 30vh;
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+}
+.main__modal__form__mail-label {
+  color: #fff;
+  font-size: 25px;
+  display: block;
+  height: 5vh;
+  line-height: 5vh;
+}
+.main__modal__form__mail-input {
+  height: 5vh;
+  width: 15vw;
+}
+.main__modal__form__mail-input:focus-visible {
+  outline: none;
+  font-size: 20px;
+  padding-left: 0.5vw;
+}
+.main__modal__form__mail-submit {
+  height: 5vh;
+  width: 8vw;
+  font-family: "Urbanist";
+  font-size: 20px;
+  cursor: pointer;
+}
+.main__modal__btn-close {
+  position: absolute;
+  top: 60vh;
+  left: 46vw;
+  height: 5vh;
+  width: 8vw;
+  font-size: 20px;
+  font-family: "Urbanist";
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,259 @@
+@import 'reset';
+
+// Variables
+
+$navy: #002244;
+$coral: #ff5d4c;
+$lightcoral: #ff5e4cc5;
+$orange: #ff9f49;
+$black: #000000;
+$grey: #e4e4e4;
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('../assets/fonts/Urbanist-VariableFont_wght.ttf');
+}
+
+$font: 'Urbanist';
+
+.show{ 
+    display: block !important;
+}
+
+// Mixin
+
+@mixin row-limit-size($max: 1400px, $width: 80vw) {
+    max-width: $max;
+    width: $width;
+}
+
+@mixin flex($justify-content){
+    display: flex;
+    justify-content: $justify-content;
+}
+
+@mixin height($max: 100px, $min: 60px, $height: 10vh) {
+    max-height: $max;
+    min-height: $min;
+    height: $height;
+}
+
+@mixin grow-basis($grow: 1, $basis: 0) {
+    flex-grow: $grow;
+    flex-basis: $basis;
+}
+
+// General
+
+body{
+    background-color: $lightcoral;
+    height: 100vh;
+    font-family: $font;
+}
+
+// Header
+
+.header{
+    @include height();
+
+    &__nav{
+        @include row-limit-size();
+        margin: 0 auto;
+
+        &__list{
+            @include row-limit-size(800px, 50vw);
+            @include flex(space-between);
+            float: right;
+
+            &__li{
+                @include height();
+                @include grow-basis();
+
+                &__link{
+                    @include height();
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    text-align: center;
+                    color: $black;
+                    font-size: 20px;
+                    display: block;
+                    width: 100%;
+                }
+
+                &__link:hover{
+                    color: $grey;
+                }
+            }
+        }
+    }
+}
+
+// Content 
+
+.main{
+    @include row-limit-size(1600px);
+    margin: 0 auto;
+
+    &__release-content{
+        @include height();
+        line-height: 10vh;
+
+        &__release{
+            font-size: 25px;
+            letter-spacing: 1px;
+
+            &__alert{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            &__alert:hover{
+                color: $grey;
+            }
+        }
+    }
+
+    &__primary-content{
+        @include flex(space-between);
+        height: 60vh;
+
+        &__corporate-container{
+            width: 15%;
+        
+            &__logo-container{
+                margin-top: 25%;
+
+                &__logo{
+                    width: 100%;
+                }
+            }
+
+            &__title-slogan-container{
+
+                &__title{
+                    text-align: center;
+                    font-size: 30px;
+                    letter-spacing: 8px;
+                    margin-top: 50px;
+                }
+
+                &__slogan{
+                    text-align: center;
+                    font-size: 20px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        &__slider-container{
+            @include grow-basis();
+            @include flex(space-between);
+            margin-left: 5vw;
+
+            &__arrow-container{
+                width: 5%;
+                margin-top: 25vh;
+
+                &__left-arrow{
+                    transform: rotateY(180deg);
+                    cursor: pointer;
+                }
+                &__right-arrow{
+                    cursor: pointer;
+                }
+            }
+
+            &__side{
+                width: 25%;
+                margin-top: 25vh;
+
+                &__img{
+                    height: 50%;
+                    display: block;
+                    margin: 5vh auto;
+                }
+
+                &__product-title{
+                    text-align: center;
+                    font-size: 20px;
+                }
+
+                &__product-price{
+                    text-align: center;
+                    font-size: 20px;
+                }
+            }
+
+            &__middle{
+                width: 37%;
+                margin-top: 5vh;
+
+                &__img{
+                    height: 90%;
+                    display: block;
+                    margin: 5vh auto;
+                }
+            }
+        }
+    }
+
+    &__modal{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #002244c0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+
+        &__form{
+            position: absolute;
+            top: 40vh;
+            left: 25vw;
+            height: 30vh;
+            width: 50vw;
+            @include flex(space-around);
+
+            &__mail-label{
+                color: #fff;
+                font-size: 25px;
+                display: block;
+                height: 5vh;
+                line-height: 5vh;
+            }
+
+            &__mail-input{
+                height: 5vh;
+                width: 15vw;
+            }
+
+            &__mail-input:focus-visible{
+                outline: none;
+                font-size: 20px;
+                padding-left: .5vw;
+            }
+
+            &__mail-submit{
+                height: 5vh;
+                width: 8vw;
+                font-family: 'Urbanist';
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+
+        &__btn-close{
+            position: absolute;
+            top: 60vh;
+            left: 46vw;
+            height: 5vh;
+            width: 8vw;
+            font-size: 20px;
+            font-family: 'Urbanist';
+            cursor: pointer;
+        }
+    }
+}
+
+
+
